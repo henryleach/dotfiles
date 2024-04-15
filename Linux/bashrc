@@ -1,0 +1,17 @@
+## General
+
+alias ll='ls -al'
+alias la='ls -a'
+
+alias ..='cd ..;pwd'
+alias ...='cd ../..;pwd'
+
+
+## Git related
+
+# 'Update' the local from remote.
+alias gup='git fetch; git pull'
+
+# Commit to current branch without comment
+# requires the git alias 'nccommit' to be in .gitconfig file.
+alias gnc='git add .; git nccommit; git push'

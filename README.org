@@ -1,0 +1,55 @@
+#+TITLE: Henry's Dotfiles
+
+This is a collection of dotfiles that hopefully covers most of the systems I use; depending on how recently I've used them they may be out of date. Then hopefully I can manage them all from one version managed directory.
+
+* Installation
+
+Running the script ~install-dotfiles.sh~ will create symlinks in your users ~$HOME~ directory for each regular file in the subfolder 'common' and any other folder that matches the system's output of ~uname~. The symlink is named the filename plus a leading dot. It will overwrite any existing file with that name already there.
+
+WARNING: If the same named file exists in both 'common' and a system specific folder, the last one in the system specific folder will overwrite the one in common.
+
+Additionally anything in the folder xdg_config_home will be symlinked into the location of ~$XDG_CONFIG_HOME~ if set, if not set it will default to ~$HOME/.config~. Unlike above this will happen for directories as well as regular files.
+
+* Dependencies
+
+In all cases only a POSIX compatible shell to run is required to install them. The aliases expect the following to be installed:
+
+- Fish (interactive Shell)
+- Git
+- xclip
+  
+The ~.Xresources~ file expects my preferred mono-space font, [[https://dharmatype.com/calling-code][Calling Code]] to be installed. It's not a free font (in either sense of the word) so you probably want to change that, the commented out line following it specifies Courier as an alternative font.
+
+** OpenBSD
+
+To work without modification the following additional programmes need to be installed:
+
+- [[https://feh.finalrewind.org/][feh]], for showing a wallpaper image.
+
+Additionally the following programmes should be installed if you want all the aliases in the ~.kshrc~ to work:
+
+- colorls
+
+Anything else needed should be in the resources dir.
+
+* Termbar
+
+A 'termbar' is a simple status bar created in a terminal and positioned where you want it on the screen. I think the original came from [[https://github.com/vetelko/termbar][vetelko]], but there are a [[https://www.tumfatig.net/2020/a-simple-shell-status-bar-for-openbsd-and-cwm1/][few]] [[https://github.com/linfocito/termbar][about]], and this is my spin on it. 
+
+The script is in the resources dir, the width probably needs to be adjusted to the current screen resolution, which can be done by editing the amount of spaces and tabs in the line starting ~printf~.
+
+This is only installed automatically when running CWM on OpenBSD.
+
+* Miscellaneous
+
+~.gitconfig~ includes and import of the file ~.gitconfig_private~ which includes  details best not left lying around on the net. You may want to add your own, or it may complain that it's missing.
+
+This includes a very basic GNU Emacs config, meant only for terminal use. The full config is in the [[https://github.com/henryleach/emacs][emacs]] repo. Requires Emacs 29 or higher for the ~--init-directory~ option.
+
+* Licenses & Attributions
+
+The [[https://unsplash.com/photos/orange-yellow-and-blue-papers-_ZfLlKxilpw][wallpaper]] is by [[https://unsplash.com/@brizmaker][Alex]] and licensed via the [[https://unsplash.com/license][Unsplash License]]
+
+The Gruvbox XTerm theme is taken from this collection of [[https://github.com/janoamaral/Xresources-themes][Xresources-themes]] and GPL-3 licensed.
+
+Everything else is covered by the LICENSE file.

@@ -1,0 +1,55 @@
+# Personal
+
+# file permissions: rwxr-xr-x
+#
+# umask	022
+
+# Uncomment this to enable the builtin vi(1) command line editor in sh(1),
+# e.g. ESC to go into visual mode.
+# set -o vi
+
+# # be paranoid
+# alias cp='cp -ip'
+# alias mv='mv -i'
+# alias rm='rm -i'
+
+# # csh like history on arrow up and down
+bind ^[[A ed-search-prev-history
+bind ^[[B ed-search-next-history
+
+# # ctrl+arrow allow to jump from words to words
+bind "\\e[1;5C" em-next-word
+bind "\\e[1;5D" ed-prev-word
+alias history='fc -l'
+
+# Fix home/del for mobaxterm
+bind ^[[5~ ed-move-to-beg
+bind ^[[6~ ed-move-to-end
+
+# set prompt: ``username@hostname:directory $ '' 
+PS1="\u@\h:\w \\$ "
+
+# search path for cd(1)
+# CDPATH=:$HOME
+
+# H's aliases:
+alias ll='ls -laFoh'	       
+alias la='ls -lA'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias mkdir='mkdir -p'
+alias df='df -h'
+alias du='du -ch'
+alias goodnight='shutdown -p now'
+
+# Good for quick file editing
+alias emin='emacs --no-site-lisp --no-splash -nw --init-directory ~/.dotfiles/emacsbasic'
+
+# For copying from command line
+alias yank='xclip -r -selection "clipboard"'
+
+# Commit to current branch without comment
+# requires the git alias 'nccommit' to be in .gitconfig file.
+alias gnc='git add .; git nccommit; git push'
+alias gup='git fetch; git pull'
+echo "Welcome to sh on $(uname)"
