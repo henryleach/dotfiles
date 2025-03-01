@@ -11,6 +11,7 @@ abbr du 'du -ch'
 abbr df 'df -h'
 abbr yank 'xclip -i -r -selection "clipboard"'
 abbr xpaste 'xclip -o -selection "clipboard"'
+abbr fev 'feh -Fd'
 
 function multicd
     echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
