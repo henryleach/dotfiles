@@ -40,6 +40,24 @@ The script is in the resources dir, the width probably needs to be adjusted to t
 
 This is only installed automatically when running CWM on OpenBSD.
 
+* ST
+
+ST is a very lightweight terminal emulator, that's meant to be used with ~tmux~. Download and make from [[https://st.suckless.org/][st - suckless]]. There are patches you can use to add pretty things, but almost all of that is something you can achieve more easily by using ~tmux~. For ease there is a desktop in the ~resources~ dir file that should be copied to, then it's easier to launch from XFCE.
+: ~/.local/share/applications/st.desktop
+
+and then can be launched that way.
+
+Requires:
+- fish
+- tmux
+
+* Custom Fonts
+
+Copy ~Fonts~ to ~~/.fonts~ and then run:
+: fc-cache -vf
+
+Now they should be present on the system
+
 * Miscellaneous
 
 ~.gitconfig~ includes and import of the file ~.gitconfig_private~ which includes  details best not left lying around on the net. You may want to add your own, or it may complain that it's missing.

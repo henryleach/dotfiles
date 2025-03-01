@@ -37,6 +37,7 @@ XTerm*faceName: CallingCode:size=12:
 ! Back-up font if CallingCode isn't installed
 ! XTerm*faceName: Courier:size=8:
 
+
 ! Make pasting in things like Firefox easier:
 XTerm*selectToClipboard: true
 
